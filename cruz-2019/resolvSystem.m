@@ -1,10 +1,12 @@
-%%implementación del metodo númerico RK4, para la resolución de 
+%%implementaciï¿½n del metodo nï¿½merico RK4, para la resoluciï¿½n de 
 %%sistema de EDO
 %%utilizando una matriz para las ecuaciones
-%%análisis de sensibilidad
+%%anï¿½lisis de sensibilidad
 
 %%observaciones
-%%simulación de 0 a 365
+%%simulaciï¿½n de 0 a 365
+
+%%erandi castillo
 
 
 
@@ -13,7 +15,7 @@ format long
     %%condiciones del RungeKutta
     tf= 19.5;%%%20 iteraciones iniciando en 0 hasta 19.5 
              %%%(20-0.5) cada iteracion vale 0.5
-    h=0.5; % tamaño de paso
+    h=0.5; % tamaï¿½o de paso
     
     %Archivo de salida
     fi = fopen('sensitivity.txt','w+');
@@ -32,7 +34,7 @@ format long
         c(11)=;  
      
 
-    m=10; %%número de ecuaciones
+    m=10; %%nï¿½mero de ecuaciones
     
     
     %%arreglos para almacenar los resultados
@@ -110,7 +112,7 @@ format long
     resulA=rungeKutta(tf,c,h,m,op,refX),         
     
     rang=0.1;%%%%rango en que se evalua la sensibilidad +1%,-1%
-    tamM=10;%%%tamaño del vector de muestra    
+    tamM=10;%%%tamaï¿½o del vector de muestra    
     rangI=refX-(rang)*(refX);
     rangF=refX+(rang)*(refX);
 
@@ -119,7 +121,7 @@ format long
 for i=1:length(X)
      %%condiciones del RungeKutta
     tf= 19.5;%%%20 iteraciones
-    h=0.5; % tamaño de paso
+    h=0.5; % tamaï¿½o de paso
      
    
     % % % % condiciones iniciales
@@ -135,7 +137,7 @@ for i=1:length(X)
         c(10)=487820              %pnthc
     
 
-    m=10; %%número de ecuaciones
+    m=10; %%nï¿½mero de ecuaciones
     
     %arreglos para almacenar los resultados
     Y=[];
