@@ -28,10 +28,9 @@ function sol=fEDO(y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,t,m,op,X)
             gnthc=gv(1+zi*cos(((2*pi)/365)*t+fi));
             c0=0.001;  %%no variar
             kF=0.456;
-            r=0.014;
+            r=0.0=14;
             temp1=(kF*c0*exp(r*t))/(kF+c0*(exp(r*t)-1));
-            temp2=((0.571-kF)*c0*exp(r*t))/((0.571-kF)+c0*(exp(r*t)-1));
-            Nh=temp1+temp2;
+            Nh=temp1+((0.571-kF)*c0*exp(r*t))/((0.571-kF)+c0*(exp(r*t)-1));
 
 switch op
     case 1
