@@ -10,13 +10,13 @@ function sol=fEDO(y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,t,m,op,X)
             muv=0.07916666667;    
             tthc=3.5;  
             tnthc=3.5; 
-            Emthc=50050;  
-            Emnthc=50050; 
+            emthc=50050;  
+            emnthc=50050; 
             ethc=0.7;  
             enthc=0.7;
             muE=0.3;  
-            Lmthc=250250;    
-            Lmnthc=250250;
+            lmthc=250250;    
+            lmnthc=250250;
             lthc=0.5;    
             lnthc=0.5;     
             muL=0.3;   
@@ -45,11 +45,11 @@ switch op
     case 5
         ro=X;
     case 6
-        d=X;
+        muv=X;
     case 7
-        gthc=X;
+        tthc=X;
     case 8
-        gnthc=X;
+        tnthc=X;
     case 9
        muv=X;
     case 10
@@ -57,33 +57,31 @@ switch op
     case 11   
        tnthc=X; 
     case 12
-       gE=X;    
+       emthc=X;    
     case 13
-       ethc=X;     
+       emnthc=X;     
     case 14
-       enthc=X;      
+       ethc=X;      
     case 15
-            muE=X;   
+       enthc=X;   
     case 16
-            gL=X;  
+       muE=X;  
     case 17
-            lthc=X;    
+       lmthc=X;    
     case 18
-            lnthc=X;      
+       lmnthc=X;      
     case 19
-            muL=X;  
+       lthc=X;  
     case 20
-            muP=X;    
+       lnthc=X;    
     case 21
-            C0=X;     
+        muL=X;     
     case 22
-            kF=X;    
+        gv=X;    
     case 23
-            r=X;  
+        kF=X;  
     case 24
-            nvnh=X;  
-    case 25
-            nv=X;    
+        r=X;      
         
 end
 aa=exp(r*t);
