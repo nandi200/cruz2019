@@ -137,16 +137,28 @@ end
             
     end
     
+     aa=(enthc*emnthc+(lnthc+muL*C+muL)*lmnthc)*(ethc*emthc+(lthc+muL*C+A+muL)*lmthc);
+            bb=lmnthc*emnthc*lmthc*emthc;
+            A1=aa/bb*(muv*C+muv)*tthc*tnthc;   %%deben ser mayor a 0;
     
-    aa=(enthc*emnthc+(lnthc+muL*C+muL)*lmnthc)*(ethc*emthc+(lthc+muL*C+A+muL)*lmthc);
-    bb=lmnthc*emnthc*lmthc*emthc;
-    A1=aa/bb*(muv*C+muv)*tthc*tnthc;   %%deben ser mayor a 0;
-    
-    cc=(lnthc+muLC+muL)*(enthc+muE*C+muE)*(muv*C+muv);
-    dd=(gnthc*lmthc*enthc*tnthc)/(gnthc+muv*C+muv);
-    ee=((ethc/lmthc)+())
-    
-    
+            cc=(lnthc+muLC+muL)*(enthc+muE*C+muE)*(muv*C+muv);
+            dd=(gnthc*lmthc*enthc*tnthc)/(gnthc+muv*C+muv);
+            ee=((ethc/lmthc)+(lthc+muL*C+A+muL)/emthc)*tthc;
+            ff=(lthc+muL*C+A+muL)*(ethc+muE*C+muE)*(muv*C+muv);
+            gg=(gthc*lthc*ethc*tthc)/(gthc+muP*C+muP);
+            hh=((enthc/lmnthc)+((lnthc+muL*C+muL)/emnthc))*tnthc;  %%debe ser mayor a 0;
+            
+            A2=(cc-dd)*(ee)+(ff-gg)*(hh);
+            
+            ii=(muv*C+muv)*(lthc+muL*C+A+muL)*(ethc+muE*C+muE)*(gthc+muP*C*muP);
+            RthcM=gthc*lthc*ethc*tthc/(ii);
+            jj=(muv*C+muv)*(lnthc+muL*C+muL)*(enthc+muE*C+muE)*(gnthc+muP*C+muP);
+            RnthcM=gthc*lnthc*enthc*tnthc;
+            Rm=RthcM+RnthcM/jj;
+            A3=(muv*C+muv)*(lthc+muL*C+A+muL)*(ethc+muE*C+muE)*(lnthc+muL*C+muL)*(enthc+muE*C+muE)*(1-Rm);
+               
+            
+           M=
        
 
 end

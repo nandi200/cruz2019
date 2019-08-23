@@ -74,7 +74,8 @@ T=[];
             for i=1:m
                 w(i)=w(i)+(k1(i)+2*k2(i)+2*k3(i)+k4(i))/6,
             end
-                        
+            
+           
                 
             p=p+1;
          Y=[Y;w(1)]; %%sobre la primera ecuaci�n
