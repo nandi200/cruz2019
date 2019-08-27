@@ -1,5 +1,5 @@
 
-function sol=fEDO(y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,t,m,op,X)
+function sol=fEDO(y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,t,m,op,X)
 
            %%%parametros del modelo
             muh=0.000037530493; 
@@ -135,30 +135,37 @@ end
         case 10  %%Pnthc
             sol=lnthc*y8-gnthc*y10-(muP+(muP*Ct))*y10;
             
+        case 11 %%hgthc=hgnthc
+            kk=(sin(fi)*cos((2*pi*t)/365))+(sin(2*pi*t/365)*cos(fi));
+            sol=muv+(365/*pi*t)*zi*muv*(kk-sin(fi));
+            
+        case 12 %%hC
+            sol=1/t(((kF/r)*log(1+(c0*(exp(r*t)-1)/kF)))+((0.571-kF)/r)*log(1+((c0*(exp(r*t)-1))/(0.571-kF))); )
+            
     end
     
-     aa=(enthc*emnthc+(lnthc+muL*C+muL)*lmnthc)*(ethc*emthc+(lthc+muL*C+A+muL)*lmthc);
+            aa=(enthc*emnthc+(lnthc+muL*y12+muL)*lmnthc)*(ethc*emthc+(lthc+muL*y12+A+muL)*lmthc);
             bb=lmnthc*emnthc*lmthc*emthc;
-            A1=aa/bb*(muv*C+muv)*tthc*tnthc;   %%deben ser mayor a 0;
+            A1=aa/bb*(muv*y12+muv)*tthc*tnthc;   %%deben ser mayor a 0;
     
-            cc=(lnthc+muLC+muL)*(enthc+muE*C+muE)*(muv*C+muv);
-            dd=(gnthc*lmthc*enthc*tnthc)/(gnthc+muv*C+muv);
-            ee=((ethc/lmthc)+(lthc+muL*C+A+muL)/emthc)*tthc;
-            ff=(lthc+muL*C+A+muL)*(ethc+muE*C+muE)*(muv*C+muv);
-            gg=(gthc*lthc*ethc*tthc)/(gthc+muP*C+muP);
-            hh=((enthc/lmnthc)+((lnthc+muL*C+muL)/emnthc))*tnthc;  %%debe ser mayor a 0;
+            cc=(lnthc+muL*y12+muL)*(enthc+muE*y12+muE)*(muv*y12+muv);
+            dd=(y11*lmthc*enthc*tnthc)/(y12+muv*y11+muv);
+            ee=((ethc/lmthc)+(lthc+muL*y12+A+muL)/emthc)*tthc;
+            ff=(lthc+muL*y12+A+muL)*(ethc+muE*y12+muE)*(muv*y12+muv);
+            gg=(y11*lthc*ethc*tthc)/(y11+muP*y12+muP);
+            hh=((enthc/lmnthc)+((lnthc+muL*y12+muL)/emnthc))*tnthc;  %%debe ser mayor a 0;
             
             A2=(cc-dd)*(ee)+(ff-gg)*(hh);
             
-            ii=(muv*C+muv)*(lthc+muL*C+A+muL)*(ethc+muE*C+muE)*(gthc+muP*C*muP);
-            RthcM=gthc*lthc*ethc*tthc/(ii);
-            jj=(muv*C+muv)*(lnthc+muL*C+muL)*(enthc+muE*C+muE)*(gnthc+muP*C+muP);
-            RnthcM=gthc*lnthc*enthc*tnthc;
+            ii=(muv*y12+muv)*(lthc+muL*y12+A+muL)*(ethc+muE*y12+muE)*(y11+muP*y12*muP);
+            RthcM=y11*lthc*ethc*tthc/(ii);
+            jj=(muv*y12+muv)*(lnthc+muL*y12+muL)*(enthc+muE*y12+muE)*(y11+muP*y12+muP);
+            RnthcM=y11*lnthc*enthc*tnthc;
             Rm=RthcM+RnthcM/jj;
-            A3=(muv*C+muv)*(lthc+muL*C+A+muL)*(ethc+muE*C+muE)*(lnthc+muL*C+muL)*(enthc+muE*C+muE)*(1-Rm);
+            A3=(muv*y12+muv)*(lthc+muL*y12+A+muL)*(ethc+muE*y12+muE)*(lnthc+muL*y12+muL)*(enthc+muE*y12+muE)*(1-Rm);
                
             
-           M=
+           M=-A2+pown
        
 
 end
