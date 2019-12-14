@@ -6,12 +6,12 @@ function sol=fEDO(y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,t,m,op,X)
             a=0.65;   
             bvh=0.425; 
             bhv=0.425; 
-            ro=0.175;   
-            muv=0.07916666667;    
+            ro=0.025;   
+            muv=0.0775;    
             tthc=3.5;  
             tnthc=3.5; 
-            emthc=50050;  
-            emnthc=50050; 
+            emthc=500500;  
+            emnthc=500500; 
             ethc=0.7;  
             enthc=0.7;
             muE=0.3;  
@@ -20,19 +20,25 @@ function sol=fEDO(y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,t,m,op,X)
             lthc=0.5;    
             lnthc=0.5;     
             muL=0.3;   
-            muP=0.4;  %%no variar
-            zi=0.5;   %%no variar
-            fi=pi/2;  %%no variar
-            gv=0.115;             
+            muP=0.4;
+            A=0.1;
+            kmax=0.573;  %%kF
+            pf=0.13;
+            pm=0.04;
+            c0=0.001;  %%no variar
+            r=0.015;
+            zi=0.5; 
+            fi=pi/2;
+            g0=0.115;     %%gv      
             gthc=gv(1+zi*cos(((2*pi)/365)*t+fi));
             gnthc=gv(1+zi*cos(((2*pi)/365)*t+fi));
-            c0=0.001;  %%no variar
-            kF=0.456;
-            r=0.014;
+           
+           %% kF=0.456;
+           
             temp1=(kF*c0*exp(r*t))/(kF+c0*(exp(r*t)-1));
             temp2=((0.571-kF)*c0*exp(r*t))/((0.571-kF)+c0*(exp(r*t)-1));
             Ct=temp1+temp2;
-            Nh=832603;
+            Nh=834634;
 
 switch op
     case 1
