@@ -24,8 +24,8 @@ format long
     
  % % % % condiciones iniciales
         c(1)=0;    %tiempo inicial
-        c(2)=832603;              %sh(0)
-        c(3)=0.05*975641;         %ih(0)<--------falta esta condición inicial        
+        c(2)=833799;              %sh(0)
+        c(3)=835;                 %ih(0)        
         c(4)=0.95*975641;         %sv
         c(5)=0.05*975641;         %iv(0)
         c(6)=866743               %ethc
@@ -51,53 +51,63 @@ format long
     op=1;    
     
      switch op
-        case 1
-            refX=0.000037530493; %% muh=0.000037530493; -->fijo no variar
-        case 2 
-            refX=0.65;             %%a=0.65;   
+         %--->no variar muh
+        case 1 
+            refX=0.65;            %%a=0.65;   
+        case 2
+            refX=0.425;           %%bvh=0.425;  [0.1,0.75] day^-1
         case 3
-            refX=0.425;             %%bvh=0.425;  [0.1,0.75] day^-1
+            refX=0.425;           %%bhv=0.425; [0.1,0.75] day^-1
         case 4
-            refX=0.425;             %%  bhv=0.425; [0.1,0.75] day^-1
+            refX=0.025;           %%ro=0.025; 1/7[1/10,1/4] day^-1
         case 5
-            refX=0.175;             %%ro=0.175; 1/7[1/10,1/4] day^-1
-        case 6
-            refX=0.07916666667;     %%muv [1/30,1/8] day^-1
-        case 7 
+            refX=0.0775;          %%muv 0.0775 day^-1
+        case 6 
             refX=3.5;             %%tthc [1,6] day^-1
-        case 8 
+        case 7 
             refX=3.5;             %%tnthc [1,6] day^-1
+        case 8
+           refX=500500;           %%emthc[10^3,10^6]
         case 9
-           refX=50050;              %%emthc[10^3,10^6]
+            refX=500500;          %%emnthc [10^3,10^6]
         case 10
-            refX=50050;             %%emnthc [10^3,10^6]
-        case 11
             refX=0.7;             %%ethc[0.7] day^-1
-        case 12
+        case 11
             refX=0.7;             %%enthc[0.7] day^-1
-        case 13
+        case 12
             refX=0.3;             %%muE[0.2,0.4]
-        case 14
-            refX=250250;             %%lmthc[5*10^2,5*10^5]
-        case 15     
-            refX=250250;             %%lmnthc[5*10^2,5*10^5]
-        case 16
+        case 13
+            refX=250250;          %%lmthc[5*10^2,5*10^5]
+        case 14     
+            refX=250250;          %%lmnthc[5*10^2,5*10^5]
+        case 15
             refX=0.5;             %%lthc 0.5 day^-1
-        case 17
+        case 16
             refX=0.5;             %%lnthc 0.5 day^-1
-        case 18
+        case 17
             refX=0.3;             %%muL[0.2,0.4]
             
-            %--->no variar muP,zi,fi
+            %--->no variar muP
+        case 18
+            refX=0.1;             %%A [0.08,0.12]           
         case 19
-            refX=0.115;             %%gv [0.08,0.15]
-           %% gthc, gnthc son dependientes de zi,pi,t y fi
-           %%no variar c0
+             refX=0.2855;            %%kmax [0,0.571]
         case 20
-             refX=0.456;            %%kf 0.465, [0,0.571]
+             refX=0.013;            %%pf 0.013
         case 21
-             refX=0.014;            %%r 0.014,[0.010,0.018]
-         
+             refX=0.04;             %%pm=0.04
+         case 22
+             refX=0.001;            %%c0=0.001
+         case 23
+             refX=0.015;            %%r=0.015
+         case 24
+             refX=0.5;              %%zi=0.5, [0,0.9]
+         case 25
+             refx=pi/2;             %%fi=pi/2
+         case 26
+             refX=0.115;            %%g0=0.115,[0.08,0.15]
+         case 27
+             refX=834634;           %%Nh=834634
      end
     
     %%funcion de referencia, parametros normales  
@@ -118,8 +128,8 @@ for i=1:length(X)
    
     % % % % condiciones iniciales
         c(1)=0;    %tiempo inicial
-        c(2)=832603;              %sh(0)
-        c(3)=0.05*975641;         %ih(0)<--------falta esta condición inicial        
+        c(2)=833799;              %sh(0)
+        c(3)=835;         %ih(0)<--------falta esta condición inicial        
         c(4)=0.95*975641;         %sv
         c(5)=0.05*975641;         %iv(0)
         c(6)=866743               %ethc
